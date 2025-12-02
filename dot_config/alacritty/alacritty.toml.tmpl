@@ -15,11 +15,11 @@ startup_mode = "Windowed"
 
 [font]
 
-{{- if eq .chezmoi.os "windows" }}
-size = 20.0
-{{- else }}
+{{ if (eq .chezmoi.os "windows") }}
+size = 13.0
+{{ else }}
 size = 11.0
-{{- end }}
+{{ end }}
 
 [font.normal]
 family = "HackGen Console NF"
@@ -35,11 +35,11 @@ vi_mode_style = { shape = "Block", blinking = "Off" }
 
 
 [terminal]
-{{- if eq .chezmoi.os "windows" }}
+{{ if (eq .chezmoi.os "windows") }}
 shell = { program="pwsh", args=["-NoLogo", "-NoExit", "-Command", "Set-Location ~"] }
-{{- else }}
+{{ else }}
 shell = { program="/bin/bash", args=["-l"] }
-{{- end }}
+{{ end }}
 
 [selection]
 save_to_clipboard = true
