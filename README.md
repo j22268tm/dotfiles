@@ -128,7 +128,7 @@ WindowsのAlacrittyは仕様上 ```XDG_CONFIG_HOME``` を無視して ```%APPDAT
 New-Item -ItemType SymbolicLink -Path "$env:APPDATA\alacritty" -Target "$HOME\.config\alacritty"
 ```
 
-でいけると[巷](https://gemini.google.com)では言われてるが管理者権限が求められるのでJunction推奨
+でいけると[巷](https://gemini.google.com)では言われているが、管理者権限を求められるのでJunction推奨
 ```PowerShell
 New-Item -ItemType Junction -Path "$env:APPDATA\alacritty" -Target "$HOME\.config\alacritty"
 ```
