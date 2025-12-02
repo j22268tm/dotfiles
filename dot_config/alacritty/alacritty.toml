@@ -1,0 +1,46 @@
+[general]
+live_config_reload = true
+
+import = []
+
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.75
+padding = { x = 6, y = 6 }
+# decorations = "None"
+startup_mode = "Windowed"
+
+[font]
+
+{{- if eq .chezmoi.os "windows" }}
+size = 20.0
+{{- else }}
+size = 11.0
+{{- end }}
+
+[font.normal]
+family = "HackGen Console NF"
+style = "Regular"
+
+[font.bold]
+family = "HackGen Console NF"
+style = "Bold"
+
+[cursor]
+style = {shape = "Block", blinking = "On"}
+vi_mode_style = { shape = "Block", blinking = "Off" }
+
+
+[terminal]
+{{- if eq .chezmoi.os "windows" }}
+shell = { program="pwsh", args=["-NoLogo", "-NoExit", "-Command", "Set-Location ~"] }
+{{- else }}
+shell = { program="/bin/bash", args=["-l"] }
+{{- end }}
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
