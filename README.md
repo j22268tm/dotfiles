@@ -9,6 +9,7 @@ Windows (pwsh) と Linux で使えるはず
 | ------- | ----------- |
 | Alacritty | alacritty/alacritty.toml(.tmpl) |
 | Neovim  | nvim(dir) |
+| starship | starship.toml(.tmpl) |
 
 ## Setup
 
